@@ -28,7 +28,10 @@ function App() {
   useEffect(() => {
     const fetchPeople = async () => {
       setLoading(true);
-      const res = await axios.get("/db/data.json");
+      // const res = await axios.get("/db/data.json");
+      const res = await axios.get(
+        "https://raw.githubusercontent.com/MFurkan40/data-repos/main/data.json"
+      );
       setPeople(res.data);
       setLoading(false);
     };
