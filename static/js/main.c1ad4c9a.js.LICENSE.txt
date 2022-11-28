@@ -48,4 +48,6 @@
 
 //! Get the current person
 
+//! windowSize
+
 //! windowSize setPeoplePerPage
