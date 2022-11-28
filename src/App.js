@@ -13,14 +13,24 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [peoplePerPage, setPeoplePerPage] = useState(4);
+  const [result, setResult] = useState(true);
+
+  //! windowSize
+  const getWindowSize = () => {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  };
 
   //! windowSize setPeoplePerPage
   window.addEventListener("resize", () => {
     if (getWindowSize().innerWidth > 1980) {
+      setResult(true);
       setPeoplePerPage(5);
     } else if (getWindowSize().innerWidth < 768) {
+      setResult(false);
       setPeoplePerPage(3);
     } else {
+      setResult(true);
       setPeoplePerPage(4);
     }
   });
@@ -46,6 +56,7 @@ function App() {
   const currentPerson = people.slice(indexOfFirstPerson, indexOfLastPerson);
 
   //! header data info
+
   const setHeaderDataTo = () => {
     if (getWindowSize().innerWidth > 1980) {
       return (currentPage - 1) * peoplePerPage + 1 + 4;
@@ -73,14 +84,10 @@ function App() {
         peoplePerPage={peoplePerPage}
         totalPeople={people.length}
         setCurrentPage={setCurrentPage}
+        result={result}
       />
     </Box>
   );
-}
-
-function getWindowSize() {
-  const { innerWidth, innerHeight } = window;
-  return { innerWidth, innerHeight };
 }
 
 export default App;

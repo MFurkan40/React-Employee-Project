@@ -5,19 +5,21 @@ const PaginationButton = ({
   setCurrentPage,
   peoplePerPage,
   totalPeople,
+  result,
 }) => {
+  //! windowSize
   return (
     <Pagination
-      className="mt-6 p-2"
+      className="page mt-6 p-2"
       current={currentPage}
       showFirstLast
       total={Math.ceil(totalPeople / peoplePerPage)}
       onChange={(current) => setCurrentPage(current)}
+      showPrevNext={result}
       size="small"
     />
   );
 };
-
 export default PaginationButton;
 
 // const pageNumbers = [];

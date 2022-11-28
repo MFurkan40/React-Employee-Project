@@ -1,7 +1,27 @@
 .employee h5 {
+  color: rgba(0, 0, 0, 0.788) !important;
   margin-bottom: 0.1rem;
 }
 
 .span-emp {
+  color: #302f2f !important;
   display: block;
+}
+
+.mail-emp {
+  color: indigo !important;
+}
+
+@media screen and (max-width: 768px) {
+  .employee {
+    text-align: center;
+    font-size: 1.2rem !important;
+  }
+
+  .employee-img {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center;
+    padding: 0.2rem !important;
+  }
 }
