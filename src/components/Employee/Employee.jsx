@@ -12,7 +12,7 @@ const Employee = ({ employee }) => {
         <Content className="px-1 pb-1">
           <h5 className="mb-1 pt-4">{name}</h5>
           <p>
-            <div className="pb-1">{age} years old</div>
+            <span className="span-emp pb-1">{age} years old</span>
             <a href={"mailto:" + email}>{email}</a>
           </p>
         </Content>
