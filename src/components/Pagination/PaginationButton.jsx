@@ -1,4 +1,5 @@
 import { Pagination } from "react-bulma-components";
+import "./paginationButton.css";
 
 const PaginationButton = ({
   currentPage,
@@ -10,7 +11,7 @@ const PaginationButton = ({
   //! windowSize
   return (
     <Pagination
-      className="page mt-6 p-2"
+      className="mt-6 p-2"
       current={currentPage}
       showFirstLast
       total={Math.ceil(totalPeople / peoplePerPage)}
